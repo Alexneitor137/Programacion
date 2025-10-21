@@ -1,0 +1,16 @@
+1.
+Para este ejercicio usé uno de mis hobbies: ver anime. Imaginé que gano puntos por cada video que veo, y así relacioné algo que me gusta con lo que estamos aprendiendo: variables y operaciones.
+2.
+Usé dos variables: puntos_ganados = 1500 y numero_videos_anime = 30. Luego hice una división para calcular el promedio de puntos por video:
+3.
+Este promedio me ayuda a saber cuántos puntos gano por episodio. Si quiero llegar a 2000 puntos, sé que debo ver 40 episodios más, porque gano 50 por cada uno.
+#Designo las variables
+puntos_ganados = 1500
+numero_videos_anime = 30
+#Calculo el promerio de puntos por video visto con una division(/)
+promedio_puntos_por_video = puntos_ganados/numero_videos_anime
+#Muestro el resultado de la operacion anterior
+print(promedio_puntos_por_video)   
+
+4. 
+Este ejercicio me ayudó a practicar cómo usar variables y operaciones de forma útil, relacionándolo con mis intereses. Aprendí que programar también se puede aplicar en cosas que hago todos los días.    

@@ -1,0 +1,13 @@
+1.En este ejerrcicio, vamos a dar uso de los comandos for en un contexto de rangos, los cuales sirven para establecer un rango de valores, en este caso valores de tiempo.
+
+2 y 3:
+
+#Establecemos los rangso de años, siempre añadiendo 1 numero estra al segundo numero ya que siempre no cuenta 1, tras lo cual añadimos 1 print en el que vamos a mostrar los 3 valores seguidos de lo que representan..
+```
+for anio in range(1978,2026):
+    for mes in range(1,13):
+        for dia in range(1,31):
+            print("Año:" ,anio, "Mes:" ,mes, "Dia:" ,dia)
+```
+    
+4. La variable for es extremadamente util para hacer rangos, ya que sin apenas esfuerzo permite una creacion de rangos, que podrian servir desde hacer un calendario hasta un reloj.
