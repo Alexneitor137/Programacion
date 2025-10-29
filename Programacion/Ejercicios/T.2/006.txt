@@ -1,0 +1,41 @@
+Introducción y contextualización
+
+En este ejercicio se trabaja con objetos predeterminados de Python, en este caso el módulo datetime. Este modulo me permite manejar fechas de manera sencilla y confiable.
+Puedo hacer uso de las fechas para registrar las distintas actividades que realizo a lo largo de un dia o realizar un calendario.
+
+Desarrollo técnico correcto y preciso
+´´´
+import datetime as fechas
+
+# Crear un objeto date que representa el 11 de septiembre de 2025
+hoy = fechas.date(2025, 9, 11)
+
+# Mostrar la fecha completa y sus componentes
+print(hoy)          # 2025-09-11
+print(hoy.year)      # 2025
+print(hoy.month)     # 9
+print(hoy.day)       # 11
+
+# Determinar el día de la semana
+diadelasemana = hoy.weekday()   # Lunes=0, Domingo=6
+print(diadelasemana)
+
+diadelasemana = hoy.isoweekday() # Lunes=1, Domingo=7
+print(diadelasemana)
+´´´
+El código está escrito correctamente, siguiendo las instrucciones, y demuestra cómo crear y manipular un objeto predeterminado (date) sin errores.
+
+Aplicación práctica con ejemplo claro
+
+El ejemplo práctico muestra cómo usar los objetos predeterminados de Python para:
+
+Obtener la fecha completa (hoy).
+
+Acceder a sus componentes individuales (year, month, day).
+
+Determinar el día de la semana mediante weekday() o isoweekday().
+
+Cierre / Conclusión enlazando con la unidad
+
+Este ejercicio demuestra la utilidad de los objetos predeterminados de Python para manejar fechas y tiempos, algo muy común en programación real.
+Siendo que aprender a usar objetos como date me ha ayudado a entender mejor cómo Python proporciona herramientas listas para usar, lo que simplifica muchas tareas sin necesidad de crear clases desde cero.

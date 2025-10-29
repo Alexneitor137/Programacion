@@ -1,0 +1,49 @@
+Introducción y contextualización
+
+En este ejercicio se aborda la importancia del control de excepciones en la programación, un concepto fundamental para garantizar la estabilidad y continuidad de los programas.
+Cuando un error ocurre durante la ejecución, como una división entre cero o un fallo al acceder a un recurso, el control de excepciones permite que el programa no se detenga abruptamente, sino que gestione el error y continúe funcionando.
+Este enfoque mejora la robustez del código y facilita la detección y corrección de fallos sin afectar la experiencia del usuario ni la ejecución general del sistema.
+
+Desarrollo técnico correcto y preciso
+
+El código implementa correctamente las estructuras básicas del manejo de errores en Python mediante los bloques try y except:
+´´´
+try:
+  print(4/0)
+  print("Intento conectarme a la base de datos")
+  print("pero falla")
+except ZeroDivisionError:
+  print("No puedo ejecutar eso")
+except Exception as e:
+  print(f"Pues por lo menos guardo los datos a un archivo local... {e}")
+
+print("Y el programa continua")
+´´´
+Explicación técnica:
+
+Se usa try para englobar el código que puede generar errores.
+
+except ZeroDivisionError captura específicamente el error de división entre cero.
+
+except Exception as e maneja cualquier otro tipo de error no previsto, mostrando información sobre la causa (e).
+
+El programa finaliza con un mensaje que confirma que la ejecución continúa normalmente, demostrando un control de errores adecuado.
+
+Aplicación práctica
+Supongamos que el programa intenta ejecutar una operación matemática incorrecta (dividir entre cero) y luego conectarse a una base de datos.
+La salida sería:
+No puedo ejecutar eso
+Y el programa continua
+
+Interpretación:
+
+El error de división se detecta y gestiona sin detener el programa.
+
+El flujo continúa, mostrando cómo el control de excepciones permite mantener la ejecución incluso ante fallos inesperados.
+
+Este ejemplo demuestra de manera clara cómo el manejo de excepciones en Python evita interrupciones no deseadas y garantiza una ejecución segura y estable en caso de errores.
+
+Conclusión 
+El control de excepciones es una herramienta esencial en la programación, ya que permite crear programas más confiables y resistentes ante errores.
+A través de su correcta aplicación, es posible anticipar fallos, manejar errores específicos y asegurar que el flujo del programa continúe sin interrupciones.
+Este ejercicio refuerza la importancia de escribir código seguro y preparado para cualquier eventualidad, aplicando principios fundamentales de calidad y mantenimiento del software.
