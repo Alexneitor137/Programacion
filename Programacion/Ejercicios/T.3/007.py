@@ -1,6 +1,6 @@
 '''
     Entrenaiento de dragones
-    v0.1 Alejandro Calderón Sánchez
+    v0.1 Valentin Antonio De Gennaro
   	Este programa clasifica y entrena a dos dragones
 '''
 ## EN ESTE BLOQUE DEFINIMOS LAS VARIABLES Y PEDIMOS LA INFORMACION AL USUARIO ##
@@ -82,5 +82,4 @@ for dia in range (1,4):
 ## MOSTRAMOS AL INFORMACIÓN AL USUARIO ##        
     print("--------------- Final del dia" , dia,"---------------")
     print("El dragon B ahora tiene ", fuerza_dragon_b,"de fuerza")
-
     print("-----------------------------------------------------")
