@@ -1,10 +1,5 @@
-import argparse
+sudo apt install ffmpeg
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--nombre")
-parser.add_argument("--apellidos")
+LLamarlo: ffmpeg
 
-args = parser.parse_args()
-
-diccionario = vars(args)
-print(diccionario)
+# Ejemplo de uso: ffmpeg -i matrix_1080p.mp4 codificado.mp4
