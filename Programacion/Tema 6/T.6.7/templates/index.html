@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html,body{
+            padding:0x;
+            margin:0px;
+            height:100%;
+            width:100%;
+        }
+        body{
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            background: white;
+            height: 600px;
+            width: 600px;
+            display:grid;
+            grid-template-columns:repeat(3,100fr);
+        }
+        section{
+            display:grid;
+            grid-template-columns:repeat(3,100fr);
+            border: 2px solid black;
+        }
+        div{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:30px;
+            border:1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    {% for dato in datos:%}
+        <section>
+        {% for numero in dato:%}
+            <div>{{numero}}</div>
+        {% endfor %}
+        </section>
+    {% endfor %}
+</main>
+</body>
+</html>
