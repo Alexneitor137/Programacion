@@ -37,5 +37,13 @@
     </main>
     <footer>
     </footer>
+    <script>
+      let boton = document.querySelector("button")
+      boton.onclick = function(){
+      	console.log("Vamos a enviar algo al servidor")
+        let codigo = document.querySelector("#editor").textContent
+        console.log(codigo)
+      }
+    </script>
   </body>
 </html>
