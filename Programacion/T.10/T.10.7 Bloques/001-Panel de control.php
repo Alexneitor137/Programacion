@@ -4,64 +4,10 @@
   </head>
   <body>
     <nav>
-    	<ul>
-      	<li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-        <li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-        <li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-        <li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-        <li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-        <li>
-        	<a href="enlace.php">Enlace</a>
-        </li>
-      </ul>
+    	<?php include "bloques/navegacion.php" ?>
     </nav>
     <main>
-    	<table>
-      	<thead>
-        	<tr>
-          	<th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Email</th>
-            <th>Direccion</th>
-          </tr>
-        </thead>
-        <tbody>
-        	<tr>
-          	<td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Email</td>
-            <td>Direccion</td>
-          </tr>
-          <tr>
-          	<td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Email</td>
-            <td>Direccion</td>
-          </tr>
-          <tr>
-          	<td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Email</td>
-            <td>Direccion</td>
-          </tr>
-          <tr>
-          	<td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Email</td>
-            <td>Direccion</td>
-          </tr>
-        </tbody>
-      </table>
+    	<?php include "bloques/tabla.php" ?>
     </main>
   </body>
 </html>
