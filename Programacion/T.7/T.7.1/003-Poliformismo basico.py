@@ -14,7 +14,7 @@ class Alumno():
   def dameDatos(self):
     return self.nombre+self.apellidos
     
-alumno1 = Alumno("Jose Vicente","Carratala","info@jocarsa.com")
+alumno1 = Alumno("Alejandro","Calderón","Alex@gmail.com")
 print(alumno1.dameDatos())
 
 profesor1 = Profesor("Juan","Garcia","juan@jocarsa.com")
