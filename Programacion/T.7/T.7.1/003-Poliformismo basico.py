@@ -15,7 +15,7 @@ class Alumno():
     return self.nombre+self.apellidos
     
 alumno1 = Alumno("Jose Vicente","Carratala","info@jocarsa.com")
-print(alumno1)
+print(alumno1.dameDatos())
 
 profesor1 = Profesor("Juan","Garcia","juan@jocarsa.com")
-print(profesor1)
+print(profesor1.dameDatos())
