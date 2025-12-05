@@ -1,15 +1,17 @@
 <!doctype html>
 <html>
   <head>
+  	<title>Jose Vicente</title>
+    <meta charset="utf-8">
   </head>
   <body>
     <header>
       <h1>Alejandro Calderón Sánchez</h1>
       <h2>Página supercalifragilisticaespialidosa</h2>
       <nav>
-        <a href="inicio.html">Inicio</a>
-        <a href="sobremi.html">Sobre mi</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="index.php">Inicio</a>
+        <a href="sobremi.php">Sobre mi</a>
+        <a href="contacto.php">Contacto</a>
       </nav>
     </header>
     <main>
