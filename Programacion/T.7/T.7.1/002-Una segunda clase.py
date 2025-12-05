@@ -12,3 +12,6 @@ class Alumno():
     
 alumno1 = Alumno("Jose Vicente","Carratala","info@jocarsa.com")
 print(alumno1)
+
+profesor1 = Profesor("Juan","Garcia","juan@jocarsa.com")
+print(profesor1)
