@@ -23,3 +23,7 @@ Solución: (mala pero no imposible)
 3.-Al hacer eso desvinculas la carpeta
 4.-Si quieres antes haz un push por si acaso
 5.-Vuelves a clonar la carpeta en una carpeta ¡¡¡¡¡¡VACIA!!!!!!!!
+6.-Por ejemplo en C:/xampp/htdocs/loquesea
+7.-Y luego si es necesario pon dentro de esa carpeta los archivos 
+del paso 1
+8.-Profit
