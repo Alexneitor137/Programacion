@@ -11,8 +11,8 @@
   </body>
   <script>
     // Variables globales
-    let anchopagina = window.innerWidth
-    let altopagina = window.innerHeight
+    let anchopagina = window.innerWidth				// NUEVO ////////////////////
+    let altopagina = window.innerHeight			// NUEVO ////////////////////
     
     // Primero declaramos una clase madre (abstracta)
     class Entidad{											// Creamos una entidad como superclase
@@ -41,7 +41,7 @@
       }
     }
     // Voy a crear rocas
-    let numero_rocas = 10;													// Digo cuantas rocas quiero
+    let numero_rocas = 1000;													// Digo cuantas rocas quiero
     let rocas = [];																	// Creo un array vacío
     for(let i = 0;i<numero_rocas;i++){							// Recorro un bucle
       let posx_aleatoria = Math.random()*anchopagina	// posx aleatoria en toda la X de la pantalla
