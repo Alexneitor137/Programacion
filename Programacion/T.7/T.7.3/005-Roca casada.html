@@ -3,6 +3,7 @@
   <head>
     <style>
       #nave{position:absolute;width:50px;}
+      .roca{width:50px;}
     </style>
   </head>
   <body>
@@ -55,7 +56,10 @@
     // Voy a dibujar rocas
     for(let i = 0;i<numero_rocas;i++){
     	let nueva_roca = document.createElement("img"); // Creo una nueva imagen
-      nueva_roca.src = "roca.png"
+      nueva_roca.classList.add("roca")								// Le añado la clase roca
+      nueva_roca.src = "roca.png"											// Cargo la imagen de la roca
+      nueva_roca.style.position = "absolute"					// Le pongo absoluto para poder mover con libertad
+      nueva_roca.style.left = rocas[i].posx+"px"					// Le pongo su posicion X
+      nueva_roca.style.top = rocas[i].posy+"px"						// Le pongo su posicion Y
+      document.querySelector("body").appendChild(nueva_roca)	// Añado la roca al body
     }
-  </script>
-</html>
