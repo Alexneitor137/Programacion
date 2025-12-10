@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>	
+    
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      // Condiciones iniciales
+      let temporizador = setTimeout("bucle()",1000);	// Dentro de un seg, entra en el bucle
+      let lienzo = document.querySelector("canvas");
+      lienzo.width = 512;					// Anchura del lienzo
+      lienzo.height = 512;				// Altura del lienzo
+      let contexto = lienzo.getContext("2d"); // Voy a dibujar en 2d
+      
+      // Condicion de bucle
+      function bucle(){
+      	let fecha = new Date();						// Construyo una fecha
+
+        let hora = fecha.getHours();			// Quiero saber la hora
+        let minuto = fecha.getMinutes();	// Quiero saber el minuto
+        let segundo = fecha.getSeconds();	// Quiero saber el segundo
+        
+        contexto.clearRect(0,0,512,512); 	// Borro el lienzo
+        
+        contexto.beginPath();				// Empiezo a dibujar
+        contexto.arc(256,256,200,0,Math.PI*2) // Dibujo un circulo completo
+        contexto.stroke(); 					// Y trazo linea
+
+        clearTimeout(temporizador);			// Borro el temporizador anterior
+        temporizador = setTimeout("bucle()",1000); // Llamada recursiva
+      }
+    </script>
+  </body>
+</html>
