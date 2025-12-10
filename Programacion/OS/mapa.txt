@@ -1,8 +1,0 @@
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\1.Listar contenido de una carpeta.py
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\2.Atributos.py
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\3.Formateo el resultado.py
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\4.suma del tama�o.py
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\mapa.py
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\mapa.txt
-C:\Users\AlejandroCalder�nSan\OneDrive - INSTITUTO SUPERIOR DE FORMACION PROFESIONAL CEAC FP\Escritorio\Programacion\OS\Suma del tama�o.py
-json

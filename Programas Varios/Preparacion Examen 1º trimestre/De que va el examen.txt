@@ -1,0 +1,8 @@
+CRUD en Python (No SQL)
+CLases
+
+1.Presentara una pantalla de bienvenida
+2.Ofrecera al usuario 4 opciones (Crear, Leer, Actualizar, Eliminar)
+3.Habbra que definir una clase en base a una entidad que nos proporcionara invididualmente
+4.Las entidades se guardan como objetos en memoria
+5.Las entidades persistiran en el disco usando pickle

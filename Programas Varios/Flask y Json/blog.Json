@@ -1,0 +1,26 @@
+[
+    {
+        "titulo":"Primer articulo",
+        "fecha":"2025-10-16",
+        "autor":"Alejandro Calderon Sanchez",
+        "contenido":"Este es el contenido del primer articulo"
+    },
+    {
+        "titulo":"Segundo articulo",
+        "fecha":"2025-10-16",
+        "autor":"Alejandro Calderon Sanchez",
+        "contenido":"Este es el contenido del Segundo articulo"
+    },
+    {
+        "titulo":"Tercer articulo",
+        "fecha":"2025-10-16",
+        "autor":"Alejandro Calderon Sanchez",
+        "contenido":"Este es el contenido del tercer articulo"
+    },
+    {
+        "titulo":"Cuarto articulo",
+        "fecha":"2025-10-16",
+        "autor":"Alejandro Calderon Sanchez",
+        "contenido":"Este es el contenido del cuarto articulo"
+    }
+]

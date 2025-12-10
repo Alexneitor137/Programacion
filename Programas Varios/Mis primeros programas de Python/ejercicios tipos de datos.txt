@@ -1,0 +1,46 @@
+1.Los distintos tipos de datos, son los distintos tipos de datos, como por ejemplo en este caso numericos, en los que como se vera en el codigo del ejercicio, pasamos la variable edad del jugador a un numero entero, y luego la multiplicamos.
+
+2.Tras declarar una variable con input, utilizamos el comando int, precedido por el nuevo nombre de la variable a la que le vamos a asignar el numero pasado a entero.
+Como ejemplo:
+
+```
+edad = input("Dime tu edad: ")
+edad_entera = int(edad)
+```
+
+Y tras eso se multiplicaria por 2 la variable que hayas creado para contener el numero entero, asignandole el resultado a una nueva variable.
+ejemplo:
+
+```
+doble_edad = edad*2
+```
+
+3. A continuacion, presento un ejercicio en el que represento el uso del numero entero y multiplicacion, que he presentado en los 2 anteriores apartados:
+
+Pedimos la edad del jugador
+```
+edad_jugador = input("Dime tu edad: ")
+```
+
+mostramos la edad dada por el jugador para que se asegure de no haberse equivocado
+```
+print(edad_jugador)
+```
+
+Convertimos la edad dada por el usuario en un numero entero y se la asignamos a la variable edad_entera 
+```
+edad_entera = int(edad_jugador)
+```
+
+multiplico la variable edad_entera por 2, y le asigno el resultado a la variable doble_edad
+```
+doble_edad = edad_entera*2
+```
+
+mostramos la variable doble_edad
+```
+print(doble_edad)
+```
+
+4.
+Los tipos de dato, en este caso mas especificamente, la conversion a numeros enteros, y la multiplicacion de estos, es extremadamente util, a la hora de representar datos numerales en un programa, siendo que sin estos, representar cualquier dato numeral o que requiera la multiplicacion de un valor por el contexto serian extremadamente dificiles e ineficientes.

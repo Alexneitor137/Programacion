@@ -1,0 +1,47 @@
+1. Introducción y contextualización (25%)
+
+En este ejercicio se crea una clase llamada Nacion, que representa un país con tres propiedades básicas:
+
+nombre: indica el nombre de la nación (tipo texto).
+
+poblacion: representa la cantidad de habitantes (tipo número).
+
+recursos: contiene una lista de los recursos naturales o económicos principales (tipo lista).
+
+La clase permite organizar información sobre distintos países de manera estructurada, lo que facilita su uso en programas de análisis o simulación.
+
+2. Desarrollo técnico correcto y preciso (25%)
+
+Se define la clase Nacion y se crea un objeto llamado españa con valores representativos:
+´´´
+class Nacion:
+    def __init__(self, nombre, poblacion, recursos):
+        self.nombre = nombre
+        self.poblacion = poblacion
+        self.recursos = recursos
+´´´
+# Creación del objeto
+´´´
+españa = Nacion("España", 48000000, ["turismo", "agricultura", "energía renovable"])
+´´´
+3. Aplicación práctica con ejemplo claro (25%)
+
+A continuación se muestran los datos del país de forma clara, usando el estilo de impresión con comas:
+´´´
+print("Datos del país:")
+print("Nombre:", españa.nombre)
+print("Población:", españa.poblacion, "habitantes")
+print("Recursos principales:", españa.recursos)
+´´´
+
+Salida esperada:
+Datos del país:
+Nombre: España
+Población: 48000000 habitantes
+Recursos principales: ['turismo', 'agricultura', 'energía renovable']
+
+4. Cierre / Conclusión enlazando con la unidad (25%)
+
+La clase Nacion puede aplicarse fácilmente al contexto del videojuego Europa Universalis IV, donde cada país posee características únicas como población, economía y recursos.
+Gracias a esta clase, es posible representar distintas naciones y compararlas según sus atributos, siendo en este caso España el ejemplo.
+Este ejercicio muestra cómo la programación orientada a objetos permite modelar entidades reales —como los países— dentro de un entorno de simulación estratégica, reforzando los conceptos aprendidos en la unidad.
