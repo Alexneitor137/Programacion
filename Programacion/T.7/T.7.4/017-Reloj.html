@@ -26,6 +26,16 @@
         contexto.beginPath();				// Empiezo a dibujar
         contexto.arc(256,256,200,0,Math.PI*2) // Dibujo un circulo completo
         contexto.stroke(); 					// Y trazo linea
+        
+        // Ahora dibujo la manecilla de los segundos
+        angulo_segundo = segundo*(Math.PI*2/60)		// Segundos convertidos a radianes
+        contexto.beginPath(); 			// Empiezo a dibujar
+        contexto.moveTo(256,256);		// Muevo el cursor al centro del reloj
+        contexto.lineTo(
+          256+Math.cos(angulo_segundo)*200,
+          256+Math.sin(angulo_segundo)*200
+        )
+        contexto.stroke();
 
         clearTimeout(temporizador);			// Borro el temporizador anterior
         temporizador = setTimeout("bucle()",1000); // Llamada recursiva
