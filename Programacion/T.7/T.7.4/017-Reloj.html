@@ -46,6 +46,16 @@
           256+Math.sin(angulo_minuto)*150
         )
         contexto.stroke();
+        
+        // Ahora dibujo la manecilla de las horas
+        angulo_hora = hora*(Math.PI*2/60)		// Segundos convertidos a radianes
+        contexto.beginPath(); 			// Empiezo a dibujar
+        contexto.moveTo(256,256);		// Muevo el cursor al centro del reloj
+        contexto.lineTo(
+          256+Math.cos(angulo_hora)*100,
+          256+Math.sin(angulo_hora)*100
+        )
+        contexto.stroke();
 
         clearTimeout(temporizador);			// Borro el temporizador anterior
         temporizador = setTimeout("bucle()",1000); // Llamada recursiva
