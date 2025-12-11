@@ -1,16 +1,24 @@
 <form action="procesaformulario.php" method="POST">
-
-	<label for="titulo">Título de la nueva noticia</label>
-	<input type="text" name="titulo" id="titulo">
+	<div class="controlformulario">
+    <label for="titulo">Título de la nueva noticia</label>
+    <input type="text" name="titulo" id="titulo">
+  </div>
   
-  <label for="contenido">Contenido de la nueva noticia</label>
-	<textarea id="contenido" name="contenido"></textarea>
+  <div class="controlformulario">
+  	<label for="contenido">Contenido de la nueva noticia</label>
+		<textarea id="contenido" name="contenido"></textarea>
+  </div>
   
-  <label for="fecha_publicacion">Fecha de la nueva noticia</label>
-	<input type="text" name="fecha_publicacion" id="fecha_publicacion">
+  <div class="controlformulario">
+  	<label for="fecha_publicacion">Fecha de la nueva noticia</label>
+		<input type="text" name="fecha_publicacion" id="fecha_publicacion">
+  </div>
   
-  <label for="autor_id">Autor de la nueva noticia</label>
-	<input type="text" name="autor_id" id="autor_id">
+  <div class="controlformulario">
+  	<label for="autor_id">Autor de la nueva noticia</label>
+		<input type="text" name="autor_id" id="autor_id">
+  </div>
   
   <input type="submit">
+  
 </form>
