@@ -1,5 +1,3 @@
-<!--http://..../basesdedatosdamdaw2526/008-Proyectos/003-Panel%20de%20control/101-Ejercicios/aplicacion/admin/escritorio.php -->
-
 <!doctype html>
 <html lang="es">
 	<head>
@@ -14,6 +12,7 @@
     </nav>
     <main>
     	<?php include "inc/read/leer.php"; ?>
+      <a href="?accion=nuevo" id="nuevo">+</a>
     </main>
   </body>
 </html>
