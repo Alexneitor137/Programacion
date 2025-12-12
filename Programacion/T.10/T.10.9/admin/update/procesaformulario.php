@@ -1,49 +1,41 @@
 <?php
+	// Esto ha empezado siendo un copia pega de eliminar
+  // Y luego lo modifica
+  
+  // Primero recojo lo que viene del formulario
+  
+	$titulo = $_POST['titulo'];	
+  $contenido = $_POST['contenido'];	
+  $fecha_publicacion = $_POST['fecha_publicacion'];	
+  $autor_id = $_POST['autor_id'];	
+  $id = $_POST['id'];																// Atrapo el id a eliminar
+	
+  // Ahora me conecto a la base de datos
+  
+  $host = "localhost";															// Me conecto a la base de datos
+  $user = "periodico";
+  $pass = "Periodico123$";
+  $db   = "periodico";
 
-// Primero traemos el formulario de insertar
-// Y luego lo rellenamos de datos (los datos a actualizar)
+  $conexion = new mysqli($host, $user, $pass, $db);	// Ejecuto la conexion
 
-		$host = "localhost";
-    $user = "periodico";
-    $pass = "Periodico123$";
-    $db   = "periodico";
+	// Le lanzo una peticion de actualización
 
-    $conexion = new mysqli($host, $user, $pass, $db);
-
-    $sql = "SELECT * FROM noticias WHERE id = ".$_GET['id'].";";
-
-    $resultado = $conexion->query($sql);
-    while ($fila = $resultado->fetch_assoc()) {
-?>
-
-    <form action="inc/update/procesaformulario.php" method="POST">
-        <input type="hidden" name="id" value="<?= $fila['titulo'] ?>"> <!-- OJO A ESTE CAMPO OCULTO -->
-      <div class="controlformulario">
-        <label for="titulo">Título de la nueva noticia</label>
-        <input type="text" name="titulo" id="titulo" value="<?= $fila['titulo'] ?>">
-      </div>
-
-      <div class="controlformulario">
-        <label for="contenido">Contenido de la nueva noticia</label>
-        <textarea id="contenido" name="contenido"><?= $fila['contenido'] ?></textarea>
-      </div>
-
-      <div class="controlformulario">
-        <label for="fecha_publicacion">Fecha de la nueva noticia</label>
-        <input type="text" name="fecha_publicacion" id="fecha_publicacion" value="<?= $fila['fecha_publicacion'] ?>">
-      </div>
-
-      <div class="controlformulario">
-        <label for="autor_id">Autor de la nueva noticia</label>
-        <input type="text" name="autor_id" id="autor_id" value="<?= $fila['autor_id'] ?>">
-      </div>
-
-      <input type="submit">
-
-    </form>
-
-<?php //php para cerrar la llave del while de arriba
-
-	} 
-
+  $sql = "
+    UPDATE noticias
+    SET 
+    titulo = '".$titulo."',
+    contenido = '".$contenido."',
+    fecha_publicacion = '".$fecha_publicacion."',
+    autor_id = ".$autor_id."
+    WHERE id = ".$id.";
+  ";	// Preparo la peticion																							// Lanzo la peticion de insert
+  echo $sql;
+  $conexion->query($sql);														// Ejecuto la peticion
+	
+  // Y cierro y vuelvo
+  
+  $conexion->close();																// Cierro la conexion
+  header("Location: escritorio.php");					// Y me vuelvo al escritorio
+  
 ?>
