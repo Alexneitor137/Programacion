@@ -18,7 +18,11 @@
       <article>
         <div class="imagen"></div>
         <p><?= $fila['precio'] ?></p>
-        <a href="producto.php?id=<?= $fila['id'] ?>">Comprar</a> <!-- NUEVO -->
+        <form action="carrito.php" method="POST">
+        	<input type="hidden" name="id" value="<?= $fila['id'] ?>">
+          <input type="number" min=1 max=10 value=1>
+          <input type="submit" value="Comprar">
+        </form>
       </article>
       <article>
       	<h3><?= $fila['nombre_producto'] ?></h3>
