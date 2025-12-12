@@ -16,7 +16,7 @@
       while ($fila = $resultado->fetch_assoc()) {
     ?>
       <article>
-        <div class="imagen"></div>
+        <div class="imagen" style="background:url(img/producto.jpg);background-size:cover;"></div>
         <h3><?= $fila['nombre_producto'] ?></h3>
         <p><?= $fila['precio'] ?></p>
         <p><?= $fila['descripcion'] ?></p>

@@ -16,7 +16,7 @@
       while ($fila = $resultado->fetch_assoc()) {
     ?>
       <article>
-        <div class="imagen"></div>
+        <div class="imagen" style="background:url(img/producto.jpg);background-size:cover;"></div>
         <p><?= $fila['precio'] ?></p>
         <form action="carrito.php" method="POST">
         	<input type="hidden" name="id" value="<?= $fila['id'] ?>">
@@ -27,7 +27,7 @@
       <article>
       	<h3><?= $fila['nombre_producto'] ?></h3>
         <p><?= $fila['descripcion'] ?></p>
-      </article
+      </article>
     <?php
         }
 
@@ -42,12 +42,12 @@
     gap:20px;
   }
   #paginaproducto article{
-  	text-align:center;
+  	text-align:justify;
     flex:1;
   }
   #paginaproducto article .imagen{
   	background:darkorchid;
-    height:100px;
+    height:300px;
     border-radius:5px 5px 0px 0px;
   }
   #paginaproducto article a{
