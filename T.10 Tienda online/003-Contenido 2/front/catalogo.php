@@ -20,7 +20,7 @@
         <h3><?= $fila['nombre_producto'] ?></h3>
         <p><?= $fila['precio'] ?></p>
         <p><?= $fila['descripcion'] ?></p>
-        <a href="comprar.php">Comprar</a>
+        <a href="producto.php?id=<?= $fila['id'] ?>">Comprar</a> <!-- NUEVO -->
       </article>
     <?php
         }
@@ -54,5 +54,3 @@
 </style>
 
 <?php include "inc/piedepagina.php"; ?>
-
-
