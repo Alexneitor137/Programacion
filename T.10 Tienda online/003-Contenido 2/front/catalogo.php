@@ -1,29 +1,41 @@
 <?php include "inc/cabecera.php"; ?>
 
-  <?php
-    $host = "localhost";
-    $user = "tiendaonlinedamdaw";
-    $pass = "Tiendaonlinedamdaw123$";
-    $db   = "tiendaonlinedamdaw";
+<section id="catalogo">
 
-    $conexion = new mysqli($host, $user, $pass, $db);
+    <?php
+      $host = "localhost";
+      $user = "tiendaonlinedamdaw";
+      $pass = "Tiendaonlinedamdaw123$";
+      $db   = "tiendaonlinedamdaw";
 
-    $sql = "SELECT * FROM producto;";
+      $conexion = new mysqli($host, $user, $pass, $db);
 
-    $resultado = $conexion->query($sql);
-    while ($fila = $resultado->fetch_assoc()) {
-?>
-	<article>
-  	<div class="imagen"></div>
-    <h3><?= $fila['nombre_producto'] ?></h3>
-    <p><?= $fila['precio'] ?></p>
-    <p><?= $fila['descripcion'] ?></p>
-    <a href="comprar.php">Comprar</a>
-  </article>
-<?php
-    }
+      $sql = "SELECT * FROM producto;";
 
-    $conexion->close();
-?>
+      $resultado = $conexion->query($sql);
+      while ($fila = $resultado->fetch_assoc()) {
+    ?>
+      <article>
+        <div class="imagen"></div>
+        <h3><?= $fila['nombre_producto'] ?></h3>
+        <p><?= $fila['precio'] ?></p>
+        <p><?= $fila['descripcion'] ?></p>
+        <a href="comprar.php">Comprar</a>
+      </article>
+    <?php
+        }
+
+        $conexion->close();
+    ?>
+
+</section>
+
+<style>
+	#catalogo{
+  	display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+</style>
 
 <?php include "inc/piedepagina.php"; ?>
