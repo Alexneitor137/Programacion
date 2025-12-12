@@ -36,6 +36,23 @@
     grid-template-columns:repeat(3,1fr);
     gap:20px;
   }
+  #catalogo article{
+  	text-align:center;
+  }
+  #catalogo article .imagen{
+  	background:darkorchid;
+    height:100px;
+    border-radius:5px 5px 0px 0px;
+  }
+  #catalogo article a{
+  	background:darkorchid;
+    padding:10px;
+    border-radius:5px;
+    color:white;
+    text-decoration:none;
+  }
 </style>
 
 <?php include "inc/piedepagina.php"; ?>
+
+
