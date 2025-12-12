@@ -24,6 +24,6 @@
   $conexion->query($sql);
 	
   $conexion->close();
-  header("Location: )
+  header("Location: ")
   
 ?>
