@@ -14,6 +14,7 @@
     </nav>
     <main>
     	<?php
+      	// Esto se conoce como router /////////////
       	if(isset($_GET['accion'])){
         	if($_GET['accion'] == "nuevo"){
           	include "inc/create/formulario.php";
