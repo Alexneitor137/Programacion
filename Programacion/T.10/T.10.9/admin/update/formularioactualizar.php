@@ -41,7 +41,7 @@
 
     </form>
 
-<?php
+<?php //php para cerrar la llave del while de arriba
 
 	} 
 
