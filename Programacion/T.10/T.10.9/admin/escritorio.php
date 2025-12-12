@@ -1,3 +1,5 @@
+<!--http://..../basesdedatosdamdaw2526/008-Proyectos/003-Panel%20de%20control/101-Ejercicios/aplicacion/admin/escritorio.php -->
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -12,12 +14,14 @@
     </nav>
     <main>
     	<?php
-      	if(isset($_GET['accion'])){								// Si hay "accion" en la URL
-        	if($_GET['accion'] == "nuevo"){					// Si la acción es "nuevo"
-          	include "inc/create/formulario.php";	// En ese caso mete el formulario
+      	if(isset($_GET['accion'])){
+        	if($_GET['accion'] == "nuevo"){
+          	include "inc/create/formulario.php";
+          }else if($_GET['accion'] == "eliminar"){ // Defino la acción eliminar
+          	include "inc/delete/eliminar.php";		// En ese caso incluyo eliminar.php
           }
-        }else{																		// En caso contrario
-      		include "inc/read/leer.php"; 						// Enseñame la tabla
+        }else{
+      		include "inc/read/leer.php"; 
         }
       ?>
       <a href="?accion=nuevo" id="nuevo">+</a>
