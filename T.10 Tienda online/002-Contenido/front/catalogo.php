@@ -1,2 +1,5 @@
-Esta es la página de catálogo<br>
-<a href="producto.php">Vamos a ver la página de producto</a>
+<?php include "inc/cabecera.php"; ?>
+
+Este es el catalogo, pero bonito
+
+<?php include "inc/piedepagina.php"; ?>
