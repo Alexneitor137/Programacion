@@ -4,7 +4,8 @@
   	"nombre",
     "apellidos",
     "email",
-    "telefono"
+    "telefono",
+    "direccion"
   ];
   
   foreach($campos_cliente as $campo){
