@@ -11,9 +11,9 @@ for x in range(0,anchura):
 		rojo = pixel[0]
 		verde = pixel[1]
 		azul = pixel[2]
-		rojo += 120
-		verde += 120
-		azul += 120
+		rojo = 255 - rojo					# Rojo a negativo
+		verde = 255 - verde				# Verde a negativo
+		azul = 255 - azul					# Azul a negativo
 		imagen.putpixel((x, y), (rojo, verde, azul)) # ESTO ES CORRECTO
     
 imagen.save("modificado.jpg")
