@@ -15,3 +15,6 @@ Podemos descargar (ollama pull) modelos preentrenados
 Hay muchos libres en HuggingFace
 Las grandes tecnológicas comparten modelos abiertos
 Siempre se quedan para ellos los más potentes
+
+Trabajo para estos dias (pero no en clase, sino en casa):
+Descargar y probar y comparar diferentes modelos de IA
