@@ -11,3 +11,6 @@ source venv/bin/activate
 
 Esto de momento no
 //pip install -r requirements.txt
+
+Requerimientos
+pip install torch
