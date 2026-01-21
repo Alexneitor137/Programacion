@@ -4,7 +4,7 @@
   	<style>
     	body,html{padding:0px;margin:0px;width:100%;height:100%;}
       body{display:flex;justify-content:center;align-items:center;}
-      
+      main{width:600px;height:400px;background:black;color:white;border-radius:5px;padding:20px;}
     </style>
   </head>
   <body>
