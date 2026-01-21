@@ -14,3 +14,6 @@ Esto de momento no
 
 Requerimientos
 pip install torch
+pip install datasets
+pip install peft
+pip install transformers
