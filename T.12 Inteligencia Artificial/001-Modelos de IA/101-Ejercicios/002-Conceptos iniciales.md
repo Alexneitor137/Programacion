@@ -18,3 +18,5 @@ Siempre se quedan para ellos los más potentes
 
 Trabajo para estos dias (pero no en clase, sino en casa):
 Descargar y probar y comparar diferentes modelos de IA
+
+Te sales de la IA una vez la inicias con el CTR + Z
