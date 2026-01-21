@@ -9,7 +9,7 @@
       input{width:100%;padding:10px;box-sizing:border-box;background:yellow;border:none;
       border-radius:0px 10px 10px 10px;}
       article{background:lightgreen;padding:20px;border-radius:10px 0px 10px 10px;
-      text-aling:justify;}
+      text-align:justify;}
     </style>
   </head>
   <body>
