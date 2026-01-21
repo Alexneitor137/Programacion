@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+  	<style>
+    	body,html{padding:0px;margin:0px;width:100%;height:100%;}
+      body{display:flex;justify-content:center;align-items:center;}
+      
+    </style>
+  </head>
+  <body>
+  <main>
+    <?php
+      $OLLAMA_URL = "http://localhost:11434/api/generate";
+      $MODEL = "qwen2.5:3b-instruct";
+      $prompt = "Explica qué es PHP.";
+      $data = [
+          "model" => $MODEL,
+          "prompt" => $prompt,
+          "stream" => false
+      ];
+      $ch = curl_init($OLLAMA_URL);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_POST, true);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, [
+          "Content-Type: application/json"
+      ]);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+      $response = curl_exec($ch);
+      if ($response === false) {
+          die("cURL error: " . curl_error($ch));
+      }
+      curl_close($ch);
+      $result = json_decode($response, true);
+      echo $result["response"];
+    ?>
+  </main>
+</html>
