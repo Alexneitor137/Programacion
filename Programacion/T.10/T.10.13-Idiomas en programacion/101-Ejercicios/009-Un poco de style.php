@@ -27,7 +27,12 @@ $idioma['en']['contacto'] = "Contact";
     <meta charset="UTF-8">
     <title>Multi idioma</title>
     <style>
-
+    	body,html{padding:0px;margin:0px;font-family:sans-serif;}
+    	header{display:flex;background:black;color:white;
+        justify-content:space-between;align-items:center;}
+        header a{text-decoration:none;color:inherit;margin:0px 10px;}
+        h1{font-size:20px;}
+        select{background:none;border:none;}
     </style>
 </head>
 <body>
