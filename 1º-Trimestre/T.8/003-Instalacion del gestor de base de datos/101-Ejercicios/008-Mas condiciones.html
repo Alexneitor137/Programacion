@@ -18,11 +18,11 @@
       const lienzo = document.querySelector("canvas");
       const contexto = lienzo.getContext("2d");
 
-      const W = 512, H = 512;
+      const W = 2512, H = 2512;
       lienzo.width = W; lienzo.height = H;
 
       // Simulation tuning
-      const NUM_NPCS = 250;
+      const NUM_NPCS = 25000;
 
       const BORDER_BOUNCE = 0.95;
 
@@ -46,15 +46,15 @@
       const ENERGY_MAX = 100;       // 5) energy
       const ENERGY_LOSS_PER_FRAME = 0.05;   // moving costs energy
       const ENERGY_DEATH = 0;       // if <= 0 -> die
-      const FOOD_ENERGY_GAIN = 65;  // 6) food restores energy
+      const FOOD_ENERGY_GAIN = 75;  // 6) food restores energy
 
       // Food collectibles
       const FOOD_COUNT = 5090;
       const FOOD_RADIUS = 4;
-      const FOOD_RESPAWN_DELAY = FPS * -1;
+      const FOOD_RESPAWN_DELAY = FPS * 0;
 
       // Reproduction
-      const REPRO_COOLDOWN_FRAMES = FPS * 0;
+      const REPRO_COOLDOWN_FRAMES = FPS * 1;
       const MATE_DISTANCE = 8;
       const OFFSPRING_ENERGY = 70;
 
