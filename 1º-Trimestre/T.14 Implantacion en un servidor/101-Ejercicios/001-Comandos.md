@@ -17,3 +17,14 @@ sudo shutdown = Apagar el equipo con un temporizador de 1 minuto
 Me voy al equipo de desarrollo (vuestro equipo)
 Saco una terminal
 ssh Alex@10.4.20.208
+
+clear = limpiar pantalla
+
+Instalar Apache:
+sudo apt install apache2
+
+Navegar hasta la carpeta de publicación:
+cd /var/www/html
+cd = change directory
+
+ls = list
