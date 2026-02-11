@@ -16,7 +16,7 @@ sudo shutdown = Apagar el equipo con un temporizador de 1 minuto
 
 Me voy al equipo de desarrollo (vuestro equipo)
 Saco una terminal
-ssh Alex@10.4.20.208
+ssh Alex@10.4.20.209
 
 clear = limpiar pantalla
 
@@ -28,3 +28,11 @@ cd /var/www/html
 cd = change directory
 
 ls = list
+
+sudo mkdir misuperweb 
+mkdir = make directory
+
+
+sudo chmod 644 -R misuperweb
+
+sudo chmod 755 -R misuperweb
