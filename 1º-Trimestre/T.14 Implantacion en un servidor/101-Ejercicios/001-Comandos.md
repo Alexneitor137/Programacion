@@ -36,3 +36,9 @@ mkdir = make directory
 sudo chmod 644 -R misuperweb
 
 sudo chmod 755 -R misuperweb
+
+sudo nano dinamico.php
+
+sudo apt install php
+
+sudo service apache2 restart
