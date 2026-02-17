@@ -1,0 +1,1 @@
+ollama run qwen2.5:3b-instruct "Quien es Alejandro Calderón Sánchez. Responde en español. No inventes ni infieras si no tienes la información"
