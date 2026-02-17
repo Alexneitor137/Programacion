@@ -9,14 +9,14 @@ from peft import LoraConfig, get_peft_model
 
 
 # ------------------------------------------------------------
-# CONFIG (simplificado)
+# CONFIG
 # ------------------------------------------------------------
-DATA_FILE = "004-preentrenamiento relleno.jsonl"
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+DATA_FILE = "004-preentrenamiento relleno.jsonl"   # <- tu fichero JSONL
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"            # <- Qwen 2.5 3B Instruct
 OUTPUT_DIR = "./qwen25-3b-jvc-lora"
 
-MAX_LENGTH = 512
-NUM_EPOCHS = 3
+MAX_LENGTH = 512 # Longitud máxima del bloque de entrenamiento
+NUM_EPOCHS = 3 # Cantidad de pasadas que se hace sobre el entrenamiento
 LR = 2e-4
 BATCH_SIZE = 1
 GRAD_ACCUM = 4
@@ -25,32 +25,49 @@ GRAD_ACCUM = 4
 def main():
     start_dt = datetime.now()
 
-    if not os.path.isfile(DATA_FILE):
-        raise FileNotFoundError(f"No existe el fichero de entrenamiento: {DATA_FILE}")
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"🚀 Training: {MODEL_NAME}")
-    print(f"📄 Data file: {DATA_FILE}")
-    print(f"💻 Device: {device}")
+    print("🚀 Starting Qwen2.5 training (Q/A JSONL)")
+    print(f"📄 Dataset: {DATA_FILE}")
+    print(f"🧠 Base model: {MODEL_NAME}")
     print("-" * 60)
+
+    # ------------------------------------------------------------
+    # Check data file exists
+    # ------------------------------------------------------------
+    if not os.path.isfile(DATA_FILE):
+        raise FileNotFoundError(f"Training file not found: {DATA_FILE}")
+
+    # ------------------------------------------------------------
+    # Device
+    # ------------------------------------------------------------
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    if device == "cuda":
+        print("💻 CUDA GPU detected. Training in fp16 with LoRA (no 4-bit).")
+    else:
+        print("💻 No CUDA GPU. Training on CPU (this will be slower).")
 
     # ------------------------------------------------------------
     # Load dataset
     # ------------------------------------------------------------
+    print("📥 Loading dataset with datasets.load_dataset(...)")
     raw_dataset = load_dataset(
         "json",
         data_files=DATA_FILE,
         split="train",
     )
-    print(f"✅ Dataset loaded: {len(raw_dataset)} examples")
+    print(f"✅ Dataset loaded with {len(raw_dataset)} Q/A examples.")
 
     # ------------------------------------------------------------
-    # Tokenizer + model
+    # Tokenizer and model (Qwen)
     # ------------------------------------------------------------
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
+    print("✅ Loading tokenizer (Qwen)...")
+    tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_NAME,
+        use_fast=True,
+    )
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    print("✅ Loading base model (Qwen)...")
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
         device_map="auto" if device == "cuda" else None,
@@ -59,13 +76,16 @@ def main():
         model.to(device)
 
     # ------------------------------------------------------------
-    # LoRA
+    # LoRA (full precision, no bitsandbytes)
     # ------------------------------------------------------------
+    print("✅ Wrapping model with LoRA (full precision)...")
     lora_config = LoraConfig(
         r=8,
         lora_alpha=16,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
-                        "gate_proj", "up_proj", "down_proj"],
+        target_modules=[
+            "q_proj", "k_proj", "v_proj", "o_proj",
+            "gate_proj", "up_proj", "down_proj"
+        ],
         lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM",
@@ -74,8 +94,10 @@ def main():
     model.print_trainable_parameters()
 
     # ------------------------------------------------------------
-    # Q/A -> chat text
+    # Convert question/answer → chat text
     # ------------------------------------------------------------
+    print("🧱 Converting (question/answer) pairs into chat-style text...")
+
     SYSTEM_PROMPT = (
         "Eres un asistente educativo en español que responde de forma clara, "
         "precisa y concisa a preguntas técnicas."
@@ -95,19 +117,30 @@ def main():
             {"role": "assistant", "content": a},
         ]
 
-        # Qwen Instruct soporta chat template (normalmente)
-        text = tokenizer.apply_chat_template(
-            conv,
-            tokenize=False,
-            add_generation_prompt=False,
-        )
+        # Qwen Instruct normalmente soporta chat template
+        try:
+            text = tokenizer.apply_chat_template(
+                conv,
+                tokenize=False,
+                add_generation_prompt=False,
+            )
+        except Exception:
+            # Fallback simple
+            text = (
+                f"SYSTEM: {SYSTEM_PROMPT}\n"
+                f"USER: {q}\n"
+                f"ASSISTANT: {a}\n"
+            )
+
         return {"text": text}
 
     text_dataset = raw_dataset.map(qa_to_text)
 
     # ------------------------------------------------------------
-    # Tokenize
+    # Tokenization
     # ------------------------------------------------------------
+    print("✅ Tokenizing dataset...")
+
     def tokenize_fn(batch):
         out = tokenizer(
             batch["text"],
@@ -126,10 +159,12 @@ def main():
 
     # ------------------------------------------------------------
     # TrainingArguments
+    # NOTE: NO overwrite_output_dir (tu versión de transformers no lo soporta)
     # ------------------------------------------------------------
+    print("✅ Configuring TrainingArguments...")
+
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
-        overwrite_output_dir=True,
         num_train_epochs=NUM_EPOCHS,
         per_device_train_batch_size=BATCH_SIZE,
         gradient_accumulation_steps=GRAD_ACCUM,
@@ -145,6 +180,10 @@ def main():
         report_to="none",
     )
 
+    # ------------------------------------------------------------
+    # Trainer
+    # ------------------------------------------------------------
+    print("✅ Creating Trainer...")
     trainer = Trainer(
         model=model,
         args=training_args,
@@ -152,23 +191,31 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # Train + save
+    # Train
     # ------------------------------------------------------------
-    print("🚂 Training...")
+    print("🚂 Starting training...")
     train_output = trainer.train()
-    print("🏁 Done.")
+    print("🏁 Training finished.")
 
+    # ------------------------------------------------------------
+    # Save
+    # ------------------------------------------------------------
+    print("💾 Saving model and tokenizer to", OUTPUT_DIR)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     trainer.save_model(OUTPUT_DIR)
     tokenizer.save_pretrained(OUTPUT_DIR)
+    print("✅ Done.")
 
+    # ------------------------------------------------------------
+    # Basic run summary
+    # ------------------------------------------------------------
     end_dt = datetime.now()
-    metrics = getattr(train_output, "metrics", None) or {}
-    print(f"✅ Saved to: {OUTPUT_DIR}")
     print(f"⏱️ Duration: {end_dt - start_dt}")
+    metrics = getattr(train_output, "metrics", None)
     if metrics:
         print("📊 Metrics:", metrics)
 
 
 if __name__ == "__main__":
     main()
+
