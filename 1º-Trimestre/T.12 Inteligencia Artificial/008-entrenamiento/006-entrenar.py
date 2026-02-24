@@ -17,13 +17,13 @@ OUTPUT_DIR = "./qwen25-3b-jvc-lora"
 
 MAX_LENGTH = 512 # Longitud máxima del bloque de entrenamiento
 NUM_EPOCHS = 3 # Cantidad de pasadas que se hace sobre el entrenamiento
-LR = 2e-4
+LR = 2e-4 # Cuando el error de entrenamiento sea menor, el entrenamiento acaba
 BATCH_SIZE = 1
 GRAD_ACCUM = 4
 
 
 def main():
-    start_dt = datetime.now()
+    start_dt = datetime.now() # Momento actual
 
     print("🚀 Starting Qwen2.5 training (Q/A JSONL)")
     print(f"📄 Dataset: {DATA_FILE}")
@@ -33,12 +33,14 @@ def main():
     # ------------------------------------------------------------
     # Check data file exists
     # ------------------------------------------------------------
+    #  Comprueba si existe, y si no, da error
     if not os.path.isfile(DATA_FILE):
         raise FileNotFoundError(f"Training file not found: {DATA_FILE}")
 
     # ------------------------------------------------------------
     # Device
     # ------------------------------------------------------------
+    # Comprueba si tienes CPU o GPU
     device = "cuda" if torch.cuda.is_available() else "cpu"
     if device == "cuda":
         print("💻 CUDA GPU detected. Training in fp16 with LoRA (no 4-bit).")
@@ -48,6 +50,7 @@ def main():
     # ------------------------------------------------------------
     # Load dataset
     # ------------------------------------------------------------
+    # Carga los dos
     print("📥 Loading dataset with datasets.load_dataset(...)")
     raw_dataset = load_dataset(
         "json",
@@ -218,4 +221,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
